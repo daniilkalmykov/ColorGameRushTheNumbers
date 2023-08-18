@@ -1,3 +1,4 @@
+using System;
 using Source.CellsSystem;
 
 namespace Source.ButtonsSystem.CellButtonsSystem
@@ -8,7 +9,7 @@ namespace Source.ButtonsSystem.CellButtonsSystem
 
         public void Init(ICell cell)
         {
-            _cell = cell;
+            _cell = cell ?? throw new ArgumentNullException();
         }
         
         protected override void OnClick()
