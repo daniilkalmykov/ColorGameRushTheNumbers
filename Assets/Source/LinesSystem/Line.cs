@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using Source.CellsSystem;
 
+[assembly: InternalsVisibleTo("Assembly-CSharp")]
 namespace Source.LinesSystem
 {
     internal sealed class Line : ILine

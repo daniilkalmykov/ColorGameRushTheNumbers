@@ -11,16 +11,17 @@ namespace Source.CompositeRoot
         [SerializeField] private CellText _cellText;
         
         private CellButton _cellButton;
-        private ICell _cell;
+        
+        public Cell Cell { get; private set; }
 
         public override void Compose()
         {
             _cellButton = GetComponent<CellButton>();
             
-            _cell = new Cell();
+            Cell = new Cell();
             
-            _cellText.Init(_cell);
-            _cellButton.Init(_cell);
+            _cellText.Init(Cell);
+            _cellButton.Init(Cell);
             
             _cellText.Show();
         }
