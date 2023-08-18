@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using Source.LinesSystem;
 
+[assembly: InternalsVisibleTo("Assembly-CSharp")]
 namespace Source.LevelsSystem
 {
     internal sealed class Level
