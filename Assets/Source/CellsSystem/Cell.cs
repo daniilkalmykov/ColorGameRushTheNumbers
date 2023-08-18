@@ -1,5 +1,7 @@
 using System;
+using System.Runtime.CompilerServices;
 
+[assembly: InternalsVisibleTo("Assembly-CSharp")]
 namespace Source.CellsSystem
 {
     internal sealed class Cell : ICell
@@ -7,8 +9,8 @@ namespace Source.CellsSystem
         private const int MaxNumber = 5;
 
         public event Action Tapped;
-        
-        public int CurrentNumber { get; private set; }
+
+        public int CurrentNumber { get; private set; } = 1;
         
         public void Tap()
         {
