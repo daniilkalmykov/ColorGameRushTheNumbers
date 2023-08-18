@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using Source.CellsSystem;
 using Source.LinesSystem;
 using UnityEngine;
 
@@ -15,7 +14,7 @@ namespace Source.CompositeRoot
         
         public override void Compose()
         {
-            var cells = _cellCompositeRoots.Select(cellCompositeRoot => cellCompositeRoot.Cell).Cast<ICell>().ToList();
+            var cells = _cellCompositeRoots.Select(cellCompositeRoot => cellCompositeRoot.Cell).ToList();
 
             _line = new Line(cells, _sum);
         }

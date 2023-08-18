@@ -12,7 +12,7 @@ namespace Source.CompositeRoot
         
         private CellButton _cellButton;
         
-        public Cell Cell { get; private set; }
+        public ICell Cell { get; private set; }
 
         public override void Compose()
         {
