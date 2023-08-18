@@ -7,16 +7,16 @@ namespace Source.CompositeRoot
 {
     internal sealed class LineCompositeRoot : CompositeRoot
     {
-        [SerializeField] private uint _sum;
         [SerializeField] private List<CellCompositeRoot> _cellCompositeRoots;
+        [SerializeField] private uint _sum;
 
-        private Line _line;
-        
+        public Line Line { get; private set; }
+
         public override void Compose()
         {
             var cells = _cellCompositeRoots.Select(cellCompositeRoot => cellCompositeRoot.Cell).ToList();
 
-            _line = new Line(cells, _sum);
+            Line = new Line(cells, _sum);
         }
     }
 }
