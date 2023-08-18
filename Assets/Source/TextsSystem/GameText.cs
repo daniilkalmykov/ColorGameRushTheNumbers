@@ -4,13 +4,18 @@ using UnityEngine;
 namespace Source.TextsSystem
 {
     [RequireComponent(typeof(TMP_Text))]
-    internal abstract class GameText : MonoBehaviour
+    internal sealed class GameText : MonoBehaviour
     {
-        protected TMP_Text Text { get; private set; }
+        private TMP_Text _text;
 
         private void Awake()
         {
-            Text = GetComponent<TMP_Text>();
+            _text = GetComponent<TMP_Text>();
+        }
+
+        public void Show(string text)
+        {
+            _text.text = text;
         }
     }
 }
