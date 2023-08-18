@@ -7,6 +7,7 @@ namespace Source.LinesSystem
         event Action Completed;
         
         int Sum { get; }
+        bool IsCompleted { get; }
 
         void Activate();
         void Deactivate();

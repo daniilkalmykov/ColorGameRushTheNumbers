@@ -20,7 +20,8 @@ namespace Source.LinesSystem
         public event Action Completed;
         
         public int Sum { get; }
-        
+        public bool IsCompleted { get; private set; }
+
         public void Activate()
         {
             foreach (var cell in _cells)
@@ -36,7 +37,14 @@ namespace Source.LinesSystem
         private void OnTapped()
         {
             if (_cells.Sum(cell => cell.CurrentNumber) == Sum)
+            {
                 Completed?.Invoke();
+                IsCompleted = true;
+            }
+            else
+            {
+                IsCompleted = false;
+            }
         }
     }
 }
