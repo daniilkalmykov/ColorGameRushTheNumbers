@@ -8,7 +8,7 @@ namespace Source.TextsSystem
     {
         private TMP_Text _text;
 
-        private void Awake()
+        public void Init()
         {
             _text = GetComponent<TMP_Text>();
         }

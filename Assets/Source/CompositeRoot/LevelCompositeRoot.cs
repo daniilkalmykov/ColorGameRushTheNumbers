@@ -12,16 +12,13 @@ namespace Source.CompositeRoot
 
         private Level _level;
 
-        private void Start()
-        {
-            _level.Start();
-        }
-
         public override void Compose()
         {
             var lines = _lineCompositeRoots.Select(lineCompositeRoot => lineCompositeRoot.Line).Cast<ILine>().ToList();
 
             _level = new Level(lines);
+            
+            _level.Start();
         }
     }
 }

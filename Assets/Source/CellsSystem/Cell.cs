@@ -8,9 +8,14 @@ namespace Source.CellsSystem
     {
         private const int MaxNumber = 5;
 
+        public Cell(uint startNumber)
+        {
+            CurrentNumber = (int)startNumber;
+        }
+        
         public event Action Tapped;
 
-        public int CurrentNumber { get; private set; } = 1;
+        public int CurrentNumber { get; private set; }
         
         public void Tap()
         {

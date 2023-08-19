@@ -16,17 +16,15 @@ namespace Source.CompositeRoot
         
         public Line Line { get; private set; }
 
-        private void Awake()
-        {
-            _text = GetComponent<GameText>();
-        }
-
         public override void Compose()
         {
             var cells = _cellCompositeRoots.Select(cellCompositeRoot => cellCompositeRoot.Cell).ToList();
 
             Line = new Line(cells, _sum);
-
+            
+            _text = GetComponent<GameText>();
+            
+            _text.Init();
             _text.Show(Line.Sum.ToString());
         }
     }
