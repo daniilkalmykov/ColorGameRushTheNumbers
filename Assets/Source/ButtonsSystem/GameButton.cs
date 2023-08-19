@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 namespace Source.ButtonsSystem
 {
+    [RequireComponent(typeof(Button))]
     internal abstract class GameButton : MonoBehaviour
     {
         private Button _button;
