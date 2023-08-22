@@ -1,6 +1,7 @@
 using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("Assembly-CSharp")]
+[assembly: InternalsVisibleTo("Lil_biba.ColorGameRushTheNumbers.ButtonsSystem")]
 namespace Source.LevelSettings
 {
     internal static class LevelSettingsSaver
