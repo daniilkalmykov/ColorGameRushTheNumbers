@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using Source.LinesSystem;
+using Source.Wallet;
 
 [assembly: InternalsVisibleTo("Assembly-CSharp")]
 namespace Source.LevelsSystem
@@ -10,10 +11,14 @@ namespace Source.LevelsSystem
     internal sealed class Level
     {
         private readonly List<ILine> _lines;
+        private readonly IWallet _wallet;
+        private readonly uint _prize;
 
-        public Level(List<ILine> lines)
+        public Level(List<ILine> lines, IWallet wallet, uint prize)
         {
             _lines = lines ?? throw new ArgumentNullException();
+            _wallet = wallet ?? throw new ArgumentNullException();
+            _prize = prize;
         }
 
         public void Start()
@@ -26,6 +31,8 @@ namespace Source.LevelsSystem
         {
             foreach (var line in _lines)
                 line.Completed -= OnCompleted;
+
+            _wallet.AddMoney((int)_prize);
         }
 
         private void OnCompleted()
