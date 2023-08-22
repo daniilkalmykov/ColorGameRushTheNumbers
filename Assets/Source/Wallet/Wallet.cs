@@ -1,5 +1,7 @@
 using System;
+using System.Runtime.CompilerServices;
 
+[assembly: InternalsVisibleTo("Assembly-CSharp")]
 namespace Source.Wallet
 {
     internal sealed class Wallet : IWallet

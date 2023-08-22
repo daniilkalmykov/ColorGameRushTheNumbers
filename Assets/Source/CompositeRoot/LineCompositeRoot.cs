@@ -11,8 +11,8 @@ namespace Source.CompositeRoot
     {
         [SerializeField] private List<CellCompositeRoot> _cellCompositeRoots;
 
-        private uint _sum;
         private GameText _text;
+        private uint _sum;
         
         public Line Line { get; private set; }
 
