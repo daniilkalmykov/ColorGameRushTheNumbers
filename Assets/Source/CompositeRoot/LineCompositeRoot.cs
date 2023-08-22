@@ -10,8 +10,8 @@ namespace Source.CompositeRoot
     internal sealed class LineCompositeRoot : CompositeRoot
     {
         [SerializeField] private List<CellCompositeRoot> _cellCompositeRoots;
-        [SerializeField] private uint _sum;
 
+        private uint _sum;
         private GameText _text;
         
         public Line Line { get; private set; }
