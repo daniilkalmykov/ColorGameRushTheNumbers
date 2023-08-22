@@ -16,6 +16,11 @@ namespace Source.CompositeRoot
         
         public Line Line { get; private set; }
 
+        public void Init(uint sum)
+        {
+            _sum = sum;
+        }
+
         public override void Compose()
         {
             var cells = _cellCompositeRoots.Select(cellCompositeRoot => cellCompositeRoot.Cell).ToList();

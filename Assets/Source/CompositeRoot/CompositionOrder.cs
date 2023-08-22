@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Source.LevelSettings;
 using UnityEngine;
 
 namespace Source.CompositeRoot
@@ -14,9 +15,14 @@ namespace Source.CompositeRoot
             foreach (var cellCompositeRoot in _cellCompositeRoots)
                 cellCompositeRoot.Compose();
 
-            foreach (var lineCompositeRoot in _lineCompositeRoots)
-                lineCompositeRoot.Compose();
+            var levelSettings = LevelSettingsSaver.GetLevelSettings();
             
+            for (var i = 0; i < _lineCompositeRoots.Count; i++)
+            {
+                _lineCompositeRoots[i].Init(levelSettings.TryGetSum((uint)i));
+                _lineCompositeRoots[i].Compose();
+            }
+
             _levelCompositeRoot.Compose();
         }
     }
