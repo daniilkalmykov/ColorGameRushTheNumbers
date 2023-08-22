@@ -8,7 +8,6 @@ namespace Source.CompositeRoot
     [RequireComponent(typeof(CellButton))]
     internal sealed class CellCompositeRoot : CompositeRoot
     {
-        [SerializeField] private uint _startNumber;
         [SerializeField] private GameText _number;
         
         private CellButton _cellButton;
@@ -25,12 +24,12 @@ namespace Source.CompositeRoot
         {
             _cellButton = GetComponent<CellButton>();
 
-            Cell = new Cell(_startNumber);
+            Cell = new Cell();
             
             _cellButton.Init(Cell);
             
             _number.Init();
-            _number.Show(_startNumber.ToString());
+            _number.Show(Cell.CurrentNumber.ToString());
 
             Cell.Tapped += OnTapped;
         }
