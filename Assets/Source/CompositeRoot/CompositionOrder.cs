@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Source.LevelSettings;
 using UnityEngine;
@@ -19,6 +20,9 @@ namespace Source.CompositeRoot
                 cellCompositeRoot.Compose();
 
             var levelSettings = LevelSettingsSaver.GetLevelSettings();
+
+            if (levelSettings == null)
+                throw new ArgumentNullException();
             
             for (var i = 0; i < _lineCompositeRoots.Count; i++)
             {

@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 using Source.CellsSystem;
 
 [assembly: InternalsVisibleTo("Assembly-CSharp")]
-namespace Source.ButtonsSystem.CellButtonsSystem
+namespace Source.ButtonsSystem
 {
     internal sealed class CellButton : GameButton
     {

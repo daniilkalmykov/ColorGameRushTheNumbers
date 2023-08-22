@@ -1,7 +1,7 @@
 using Source.LevelSettings;
 using UnityEngine;
 
-namespace Source.ButtonsSystem.LevelButtonsSystem
+namespace Source.ButtonsSystem
 {
     internal sealed class LevelButton : GameButton
     {
