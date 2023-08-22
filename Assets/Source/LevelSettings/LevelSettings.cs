@@ -9,6 +9,8 @@ namespace Source.LevelSettings
     {
         [SerializeField] private List<uint> _lineSums;
 
+        [field: SerializeField] public uint Prize { get; private set; }
+
         public uint TryGetSum(uint index)
         {
             if (index >= _lineSums.Count)
