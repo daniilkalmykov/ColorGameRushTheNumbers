@@ -12,10 +12,7 @@ namespace Source.CompositeRoot
         private void Awake()
         {
             foreach (var cellCompositeRoot in _cellCompositeRoots)
-            {
-                print("AAAA");
                 cellCompositeRoot.Compose();
-            }
 
             foreach (var lineCompositeRoot in _lineCompositeRoots)
                 lineCompositeRoot.Compose();
