@@ -1,5 +1,7 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
+[assembly: InternalsVisibleTo("Assembly-CSharp")]
 namespace Source.PlayerProgressSystem
 {
     internal static class PlayerProgressSaver

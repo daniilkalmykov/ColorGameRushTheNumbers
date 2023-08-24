@@ -1,3 +1,4 @@
+using Source.PlayerProgressSystem;
 using Source.Wallet;
 
 namespace Source.CompositeRoot
@@ -8,7 +9,7 @@ namespace Source.CompositeRoot
         
         public override void Compose()
         {
-            Wallet = new Wallet.Wallet(0);
+            Wallet = new Wallet.Wallet((uint)PlayerProgressSaver.GetMoney());
         }
     }
 }
