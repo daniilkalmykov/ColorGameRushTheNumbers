@@ -13,13 +13,15 @@ namespace Source.LevelsSystem
         private readonly List<ILine> _lines;
         private readonly IWallet _wallet;
         private readonly uint _prize;
-
+        
         public Level(List<ILine> lines, IWallet wallet, uint prize)
         {
             _lines = lines ?? throw new ArgumentNullException();
             _wallet = wallet ?? throw new ArgumentNullException();
             _prize = prize;
         }
+
+        public event Action Ended;
 
         public void Start()
         {
@@ -33,6 +35,8 @@ namespace Source.LevelsSystem
                 line.Completed -= OnCompleted;
 
             _wallet.AddMoney((int)_prize);
+            
+            Ended?.Invoke();
         }
 
         private void OnCompleted()
