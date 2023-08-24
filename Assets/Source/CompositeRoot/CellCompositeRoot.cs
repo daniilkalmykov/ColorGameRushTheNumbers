@@ -1,7 +1,10 @@
+using System;
+using System.Collections.Generic;
 using Source.ButtonsSystem;
 using Source.CellsSystem;
 using Source.TextsSystem;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Source.CompositeRoot
 {
@@ -9,6 +12,7 @@ namespace Source.CompositeRoot
     internal sealed class CellCompositeRoot : CompositeRoot
     {
         [SerializeField] private GameText _number;
+        [SerializeField] private List<Image> _images;
         
         private CellButton _cellButton;
         
@@ -27,15 +31,21 @@ namespace Source.CompositeRoot
             Cell = new Cell();
             
             _cellButton.Init(Cell);
-            
             _number.Init();
-            _number.Show(Cell.CurrentNumber.ToString());
+            
+            SetCell();
 
             Cell.Tapped += OnTapped;
         }
 
         private void OnTapped()
         {
+            SetCell();
+        }
+
+        private void SetCell()
+        {
+            _cellButton.SetImage(_images[Cell.CurrentNumber]);
             _number.Show(Cell.CurrentNumber.ToString());
         }
     }
