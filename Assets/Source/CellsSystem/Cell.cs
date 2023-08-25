@@ -11,7 +11,7 @@ namespace Source.CellsSystem
         public event Action Tapped;
 
         public int CurrentNumber { get; private set; } = 1;
-        
+
         public void Tap()
         {
             CurrentNumber++;

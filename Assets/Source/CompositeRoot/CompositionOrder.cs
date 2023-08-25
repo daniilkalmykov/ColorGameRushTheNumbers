@@ -26,7 +26,7 @@ namespace Source.CompositeRoot
             
             for (var i = 0; i < _lineCompositeRoots.Count; i++)
             {
-                _lineCompositeRoots[i].Init(levelSettings.TryGetSum((uint)i));
+                _lineCompositeRoots[i].Init(levelSettings.TryGetSum((uint)i), levelSettings.TryGetSprite((uint)i));
                 _lineCompositeRoots[i].Compose();
             }
 

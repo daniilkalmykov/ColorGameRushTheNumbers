@@ -23,11 +23,6 @@ namespace Source.ButtonsSystem
             _button.onClick.RemoveListener(OnClick);
         }
 
-        public void SetImage(Image image)
-        {
-            _button.image = image;
-        }
-
         protected abstract void OnClick();
     }
 }
