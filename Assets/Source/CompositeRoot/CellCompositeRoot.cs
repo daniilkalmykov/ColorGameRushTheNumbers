@@ -44,7 +44,7 @@ namespace Source.CompositeRoot
 
         private void SetCell()
         {
-            _cellButton.SetImage(_images[Cell.CurrentNumber]);
+            //_cellButton.SetImage(_images[Cell.CurrentNumber]);
             _number.Show(Cell.CurrentNumber.ToString());
         }
     }

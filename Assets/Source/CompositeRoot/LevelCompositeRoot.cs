@@ -19,7 +19,8 @@ namespace Source.CompositeRoot
 
         private void OnDisable()
         {
-            _level.Ended -= OnEnded;
+            if (_level != null)
+                _level.Ended -= OnEnded;
         }
 
         public void Init(uint prize, IWallet wallet)
