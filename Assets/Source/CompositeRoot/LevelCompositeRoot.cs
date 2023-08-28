@@ -11,6 +11,7 @@ namespace Source.CompositeRoot
 {
     internal sealed class LevelCompositeRoot : CompositeRoot
     {
+        [SerializeField] private MonoBehaviour _gameOverScreen;
         [SerializeField] private List<LineCompositeRoot> _lineCompositeRoots;
 
         private Level _level;
@@ -45,10 +46,13 @@ namespace Source.CompositeRoot
             
             _level.Start();
             _level.Ended += OnEnded;
+
+            _gameOverScreen.gameObject.SetActive(false);
         }
 
         private void OnEnded()
         {
+            _gameOverScreen.gameObject.SetActive(true);
             PlayerProgressSaver.SetMoney((int)_wallet.CurrentMoney);
         }
     }

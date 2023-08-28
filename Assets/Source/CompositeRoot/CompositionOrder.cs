@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Source.LevelSettings;
+using TMPro;
 using UnityEngine;
 
 namespace Source.CompositeRoot
@@ -11,6 +12,7 @@ namespace Source.CompositeRoot
         [SerializeField] private List<LineCompositeRoot> _lineCompositeRoots;
         [SerializeField] private LevelCompositeRoot _levelCompositeRoot;
         [SerializeField] private PlayerCompositeRoot _playerCompositeRoot;
+        [SerializeField] private TMP_Text _prizeText;
 
         private void Awake()
         {
@@ -30,6 +32,8 @@ namespace Source.CompositeRoot
                 _lineCompositeRoots[i].Compose();
             }
 
+            _prizeText.text = levelSettings.Prize.ToString();
+            
             _levelCompositeRoot.Init(levelSettings.Prize, _playerCompositeRoot.Wallet);
             _levelCompositeRoot.Compose();
         }
