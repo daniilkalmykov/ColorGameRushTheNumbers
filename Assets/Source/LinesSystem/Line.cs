@@ -10,16 +10,16 @@ namespace Source.LinesSystem
     internal sealed class Line : ILine
     {
         private readonly List<ICell> _cells;
+        private readonly int _sum;
 
         public Line(List<ICell> cells, uint sum)
         {
             _cells = cells ?? throw new ArgumentNullException();
-            Sum = (int)sum;
+            _sum = (int)sum;
         }
 
         public event Action Completed;
-        
-        public int Sum { get; }
+
         public bool IsCompleted { get; private set; }
 
         public void Activate()
@@ -36,7 +36,7 @@ namespace Source.LinesSystem
 
         private void OnTapped()
         {
-            if (_cells.Sum(cell => cell.CurrentNumber) == Sum)
+            if (_cells.Sum(cell => cell.CurrentNumber) == _sum)
             {
                 Completed?.Invoke();
                 IsCompleted = true;

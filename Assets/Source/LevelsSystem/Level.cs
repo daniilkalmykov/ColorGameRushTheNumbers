@@ -13,6 +13,8 @@ namespace Source.LevelsSystem
         private readonly List<ILine> _lines;
         private readonly IWallet _wallet;
         private readonly uint _prize;
+
+        private int _ends;
         
         public Level(List<ILine> lines, IWallet wallet, uint prize)
         {
@@ -29,6 +31,16 @@ namespace Source.LevelsSystem
                 line.Completed += OnCompleted;
         }
 
+        public void Update()
+        {
+            if (_lines.All(line => line.IsCompleted) == false || _ends != 0)
+                return;
+            
+            _ends++;
+            
+            End();
+        }      
+        
         private void End()
         {
             foreach (var line in _lines)

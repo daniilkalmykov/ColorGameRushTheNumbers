@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Source.LinesSystem;
@@ -18,6 +17,11 @@ namespace Source.CompositeRoot
 
         public Line Line { get; private set; }
 
+        private void OnDisable()
+        {
+            Line?.Deactivate();
+        }
+
         public void Init(uint sum, Sprite sprite)
         {
             _sum = sum;
@@ -33,6 +37,7 @@ namespace Source.CompositeRoot
             Line = new Line(cells, _sum);
 
             _image.sprite = _sprite;
+            Line.Activate();
         }
     }
 }

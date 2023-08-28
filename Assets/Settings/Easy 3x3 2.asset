@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a2a2bb6a89142dcbcd1ac4a0dc038fa, type: 3}
-  m_Name: Easy 3x3 1
+  m_Name: Easy 3x3 2
   m_EditorClassIdentifier: 
   _lineSums: 070000000400000009000000090000000600000005000000
   _lineSprites:

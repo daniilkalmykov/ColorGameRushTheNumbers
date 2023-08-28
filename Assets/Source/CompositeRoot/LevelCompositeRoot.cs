@@ -23,6 +23,11 @@ namespace Source.CompositeRoot
                 _level.Ended -= OnEnded;
         }
 
+        private void Update()
+        {
+            _level.Update();
+        }
+
         public void Init(uint prize, IWallet wallet)
         {
             if (prize <= 0)
