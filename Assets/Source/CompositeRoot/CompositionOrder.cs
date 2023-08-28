@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Source.ButtonsSystem;
 using Source.LevelSettings;
 using TMPro;
 using UnityEngine;
@@ -13,6 +14,7 @@ namespace Source.CompositeRoot
         [SerializeField] private LevelCompositeRoot _levelCompositeRoot;
         [SerializeField] private PlayerCompositeRoot _playerCompositeRoot;
         [SerializeField] private TMP_Text _prizeText;
+        [SerializeField] private LoadSceneButton _loadSceneButton;
 
         private void Awake()
         {
@@ -33,6 +35,7 @@ namespace Source.CompositeRoot
             }
 
             _prizeText.text = levelSettings.Prize.ToString();
+            _loadSceneButton.Init(levelSettings.SceneAsset);
             
             _levelCompositeRoot.Init(levelSettings.Prize, _playerCompositeRoot.Wallet);
             _levelCompositeRoot.Compose();

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace Source.LevelSettings
@@ -10,6 +11,7 @@ namespace Source.LevelSettings
         [SerializeField] private List<uint> _lineSums;
         [SerializeField] private List<Sprite> _lineSprites;
 
+        [field: SerializeField] public SceneAsset SceneAsset { get; private set; }
         [field: SerializeField] public uint Prize { get; private set; }
 
         public uint TryGetSum(uint index)

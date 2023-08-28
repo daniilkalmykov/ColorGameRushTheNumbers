@@ -508,6 +508,7 @@ GameObject:
   - component: {fileID: 696193347}
   - component: {fileID: 696193346}
   - component: {fileID: 696193345}
+  - component: {fileID: 696193348}
   m_Layer: 5
   m_Name: NextButton
   m_TagString: Untagged
@@ -617,6 +618,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 696193343}
   m_CullTransparentMesh: 1
+--- !u!114 &696193348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696193343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f5ead072404787aec2c0916bf5d323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scene: {fileID: 0}
 --- !u!1 &698403096
 GameObject:
   m_ObjectHideFlags: 0
@@ -1796,7 +1810,7 @@ GameObject:
   - component: {fileID: 1117526294}
   - component: {fileID: 1117526293}
   m_Layer: 5
-  m_Name: GanmeOverScreen
+  m_Name: GameOverScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2106,6 +2120,7 @@ GameObject:
   - component: {fileID: 1319827984}
   - component: {fileID: 1319827983}
   - component: {fileID: 1319827985}
+  - component: {fileID: 1319827986}
   m_Layer: 5
   m_Name: HomeButton
   m_TagString: Untagged
@@ -2215,6 +2230,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1319827986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319827981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f5ead072404787aec2c0916bf5d323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scene: {fileID: 102900000, guid: 03b27f93fff745344abd186d8d2a0d0b, type: 3}
 --- !u!1 &1320940984
 GameObject:
   m_ObjectHideFlags: 0
@@ -3104,6 +3132,7 @@ MonoBehaviour:
   _levelCompositeRoot: {fileID: 2086730841}
   _playerCompositeRoot: {fileID: 1320940986}
   _prizeText: {fileID: 1483640047}
+  _loadSceneButton: {fileID: 696193348}
 --- !u!4 &1660586324
 Transform:
   m_ObjectHideFlags: 0
