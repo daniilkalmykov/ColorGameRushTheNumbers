@@ -6,21 +6,21 @@ namespace Source.ButtonsSystem
     [RequireComponent(typeof(Button))]
     public abstract class GameButton : MonoBehaviour
     {
-        private Button _button;
+        public Button Button { get; private set; }
 
         private void Awake()
         {
-            _button = GetComponent<Button>();
+            Button = GetComponent<Button>();
         }
 
         private void OnEnable()
         {
-            _button.onClick.AddListener(OnClick);
+            Button.onClick.AddListener(OnClick);
         }
 
         private void OnDisable()
         {
-            _button.onClick.RemoveListener(OnClick);
+            Button.onClick.RemoveListener(OnClick);
         }
 
         protected abstract void OnClick();

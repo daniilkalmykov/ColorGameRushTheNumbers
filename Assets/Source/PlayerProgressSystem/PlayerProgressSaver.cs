@@ -1,3 +1,5 @@
+using System;
+using System.Globalization;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
@@ -8,6 +10,8 @@ namespace Source.PlayerProgressSystem
     internal static class PlayerProgressSaver
     {
         private const string Money = "Money";
+        private const string LastClaimedTime = "LastClaimedTime";
+        private const string Streak = "Streak";
 
         public static void SetMoney(int money)
         {
@@ -17,6 +21,28 @@ namespace Source.PlayerProgressSystem
         public static int GetMoney()
         {
             return PlayerPrefs.GetInt(Money);
+        }
+
+        public static void SetLastClaimedTime(DateTime dateTime)
+        {
+            PlayerPrefs.SetString(LastClaimedTime, dateTime.ToString(CultureInfo.CurrentCulture));
+        }
+
+        public static DateTime GetLastClaimedTime()
+        {
+            var result = PlayerPrefs.GetString(LastClaimedTime);
+
+            return DateTime.Parse(result, CultureInfo.CurrentCulture);
+        }
+        
+        public static void SetStreak(int id)
+        {
+            PlayerPrefs.SetInt(Streak, id);
+        }
+
+        public static int GetStreak()
+        {
+            return PlayerPrefs.GetInt(Streak);
         }
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using Source.PlayerProgressSystem;
 using Source.RewardSystem;
 
@@ -14,7 +15,8 @@ namespace Source.ButtonsSystem
         
         protected override void OnClick()
         {
-            PlayerProgressSaver.SetMoney(_reward.Money);
+            PlayerProgressSaver.SetMoney(PlayerProgressSaver.GetMoney() + _reward.Money);
+            PlayerProgressSaver.SetLastClaimedTime(DateTime.Now);
         }
     }
 }

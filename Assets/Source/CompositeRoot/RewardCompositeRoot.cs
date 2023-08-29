@@ -19,5 +19,10 @@ namespace Source.CompositeRoot
             _rewardButton = GetComponent<RewardButton>();
             _rewardButton.Init(_reward);
         }
+
+        public void Deactivate()
+        {
+            _rewardButton.Button.interactable = false;
+        }
     }
 }
