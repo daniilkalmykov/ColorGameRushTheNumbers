@@ -214,6 +214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _money: 275
   _deactivatedSprite: {fileID: 21300000, guid: ddc0e7241437663458a5d3805ef779b5, type: 3}
+  _nonCollected: {fileID: 21300000, guid: 8a9effe374135b3468c00872da5ef987, type: 3}
 --- !u!1 &335404510
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,6 +557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _money: 350
   _deactivatedSprite: {fileID: 21300000, guid: 840a381fc3a5b134a8723266982a08c7, type: 3}
+  _nonCollected: {fileID: 21300000, guid: 54bebe17b745f704388dfb5a4f8c846e, type: 3}
 --- !u!1 &734883898
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,6 +717,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _money: 500
   _deactivatedSprite: {fileID: 21300000, guid: 07e467027659ec1489a2f2aa04614615, type: 3}
+  _nonCollected: {fileID: 21300000, guid: 07e467027659ec1489a2f2aa04614615, type: 3}
 --- !u!1 &877932888
 GameObject:
   m_ObjectHideFlags: 0
@@ -806,6 +809,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _money: 150
   _deactivatedSprite: {fileID: 21300000, guid: 926145c83a398dd49a5160800ed9b8a5, type: 3}
+  _nonCollected: {fileID: 21300000, guid: 71747a105af94474791c3e3b380ffe07, type: 3}
 --- !u!1 &881510838
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,7 +847,7 @@ MonoBehaviour:
   - {fileID: 54787755}
   - {fileID: 640578467}
   - {fileID: 799600310}
-  _claimCoolDown: 24
+  _claimCoolDown: 0
   _claimDeadLine: 48
   _maxStreak: 6
   _bonusView: {fileID: 1354668568}
@@ -1520,6 +1524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _money: 200
   _deactivatedSprite: {fileID: 21300000, guid: c30d69c6298f02147a4749cb827d151d, type: 3}
+  _nonCollected: {fileID: 21300000, guid: a24ed54d5e0f4be4f90763b83186f35c, type: 3}
 --- !u!1 &1566763892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1703,6 +1708,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _money: 100
   _deactivatedSprite: {fileID: 21300000, guid: ed5d3fc1563dc6d45af75403848c55d0, type: 3}
+  _nonCollected: {fileID: 21300000, guid: 18854247e712d6f469af134ea8c50c20, type: 3}
 --- !u!1 &1801240242
 GameObject:
   m_ObjectHideFlags: 0
@@ -1794,3 +1800,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _money: 50
   _deactivatedSprite: {fileID: 21300000, guid: 2fa9e96f253738b46814458bee55ed41, type: 3}
+  _nonCollected: {fileID: 21300000, guid: 2fa9e96f253738b46814458bee55ed41, type: 3}

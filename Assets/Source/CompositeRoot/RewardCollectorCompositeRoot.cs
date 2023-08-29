@@ -18,22 +18,22 @@ namespace Source.CompositeRoot
         public override void Compose()
         {
             var streak = PlayerProgressSaver.GetStreak();
-            print(PlayerProgressSaver.GetStreak());
 
             for (var i = 0; i < _rewardCompositeRoots.Count; i++)
             {
-                if (i != streak)
-                    _rewardCompositeRoots[i].Deactivate();
-                else
+                if (i < streak)
+                    _rewardCompositeRoots[i].SetDeactivatedImage();
+                else if(i == streak)
                     _collectRewardButton.Init(_rewardCompositeRoots[i].Reward);
+                else
+                    _rewardCompositeRoots[i].SetNonCollectedImage();
             }
 
             var lastClaimedTime = PlayerProgressSaver.GetLastClaimedTime();
-            print(lastClaimedTime == null);
-
             var claimedTime = DateTime.Now - lastClaimedTime;
 
-            if (claimedTime?.TotalHours <= _claimDeadLine && claimedTime.Value.TotalHours >= _claimCoolDown || lastClaimedTime == null)
+            if (claimedTime?.TotalHours <= _claimDeadLine && claimedTime.Value.TotalHours >= _claimCoolDown ||
+                lastClaimedTime == null)
             {
                 _bonusView.gameObject.SetActive(true);
                 

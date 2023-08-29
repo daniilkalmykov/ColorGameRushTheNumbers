@@ -10,6 +10,7 @@ namespace Source.CompositeRoot
     {
         [SerializeField] private int _money;
         [SerializeField] private Sprite _deactivatedSprite;
+        [SerializeField] private Sprite _nonCollected;
 
         private Image _image;
         
@@ -22,9 +23,14 @@ namespace Source.CompositeRoot
             Reward = new Reward(_money);
         }
 
-        public void Deactivate()
+        public void SetDeactivatedImage()
         {
             _image.sprite = _deactivatedSprite;
+        }
+
+        public void SetNonCollectedImage()
+        {
+            _image.sprite = _nonCollected;
         }
     }
 }
