@@ -3,12 +3,12 @@ using UnityEngine;
 
 namespace Source.CompositeRoot
 {
-    internal sealed class MainMenuCompositeOrder : CompositeRoot
+    internal sealed class MainMenuCompositeOrder : MonoBehaviour
     {
         [SerializeField] private List<RewardCompositeRoot> _rewardCompositeRoots;
         [SerializeField] private RewardCollectorCompositeRoot _collectorCompositeRoot;
         
-        public override void Compose()
+        private void Awake()
         {
             foreach (var rewardCompositeRoot in _rewardCompositeRoots)
                 rewardCompositeRoot.Compose();

@@ -28,9 +28,12 @@ namespace Source.PlayerProgressSystem
             PlayerPrefs.SetString(LastClaimedTime, dateTime.ToString(CultureInfo.CurrentCulture));
         }
 
-        public static DateTime GetLastClaimedTime()
+        public static DateTime? GetLastClaimedTime()
         {
             var result = PlayerPrefs.GetString(LastClaimedTime);
+
+            if (string.IsNullOrEmpty(result))
+                return null;
 
             return DateTime.Parse(result, CultureInfo.CurrentCulture);
         }

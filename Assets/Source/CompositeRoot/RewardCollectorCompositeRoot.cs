@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Source.ButtonsSystem;
 using Source.PlayerProgressSystem;
 using UnityEngine;
 
@@ -12,22 +13,27 @@ namespace Source.CompositeRoot
         [SerializeField] private float _claimDeadLine;
         [SerializeField] private int _maxStreak;
         [SerializeField] private MonoBehaviour _bonusView;
+        [SerializeField] private CollectRewardButton _collectRewardButton;
         
         public override void Compose()
         {
             var streak = PlayerProgressSaver.GetStreak();
+            print(PlayerProgressSaver.GetStreak());
 
             for (var i = 0; i < _rewardCompositeRoots.Count; i++)
             {
                 if (i != streak)
                     _rewardCompositeRoots[i].Deactivate();
+                else
+                    _collectRewardButton.Init(_rewardCompositeRoots[i].Reward);
             }
 
             var lastClaimedTime = PlayerProgressSaver.GetLastClaimedTime();
+            print(lastClaimedTime == null);
 
             var claimedTime = DateTime.Now - lastClaimedTime;
 
-            if (claimedTime.TotalHours <= _claimDeadLine && claimedTime.TotalHours >= _claimCoolDown)
+            if (claimedTime?.TotalHours <= _claimDeadLine && claimedTime.Value.TotalHours >= _claimCoolDown || lastClaimedTime == null)
             {
                 _bonusView.gameObject.SetActive(true);
                 
@@ -38,7 +44,7 @@ namespace Source.CompositeRoot
 
                 PlayerProgressSaver.SetStreak(streak);
             }
-            else if (claimedTime.Hours > _claimDeadLine)
+            else if (claimedTime.Value.TotalHours > _claimDeadLine)
             {
                 PlayerProgressSaver.SetStreak(0);
             }

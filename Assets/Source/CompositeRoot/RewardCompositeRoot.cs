@@ -1,28 +1,30 @@
 using Source.ButtonsSystem;
 using Source.RewardSystem;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Source.CompositeRoot
 {
-    [RequireComponent(typeof(RewardButton))]
+    [RequireComponent(typeof(Image))]
     internal sealed class RewardCompositeRoot : CompositeRoot
     {
         [SerializeField] private int _money;
+        [SerializeField] private Sprite _deactivatedSprite;
 
-        private RewardButton _rewardButton;
-        private Reward _reward;
+        private Image _image;
+        
+        public Reward Reward { get; private set; }
 
         public override void Compose()
         {
-            _reward = new Reward(_money);
+            _image = GetComponent<Image>();
             
-            _rewardButton = GetComponent<RewardButton>();
-            _rewardButton.Init(_reward);
+            Reward = new Reward(_money);
         }
 
         public void Deactivate()
         {
-            _rewardButton.Button.interactable = false;
+            _image.sprite = _deactivatedSprite;
         }
     }
 }
