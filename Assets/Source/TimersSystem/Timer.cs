@@ -1,3 +1,7 @@
+
+using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("Lil_biba.ColorGameRushTheNumbers.TimersSystem")]
 namespace Source.TimersSystem
 {
     internal sealed class Timer : ITimer
