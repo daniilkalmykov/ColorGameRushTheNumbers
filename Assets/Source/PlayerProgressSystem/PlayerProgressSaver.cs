@@ -2,7 +2,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 
 [assembly: InternalsVisibleTo("Assembly-CSharp")]
-[assembly: InternalsVisibleTo("Lil_biba.ColorGameRushTheNumbers.RewardSystem")]
+[assembly: InternalsVisibleTo("Lil_biba.ColorGameRushTheNumbers.ButtonsSystem")]
 namespace Source.PlayerProgressSystem
 {
     internal static class PlayerProgressSaver
