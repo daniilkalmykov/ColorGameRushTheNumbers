@@ -1,3 +1,4 @@
+using System;
 using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("Assembly-CSharp")]
@@ -15,6 +16,8 @@ namespace Source.TimersSystem
             _time = time;
         }
 
+        public event Action Ended;
+        
         public int Seconds { get; private set; }
         public int Minutes { get; private set; }
         
@@ -30,8 +33,14 @@ namespace Source.TimersSystem
 
             _time -= deltaTime;
 
-            Seconds = (int)_time;
-            Minutes = Seconds / SecondsInMinutes;
+            Seconds = (int)_time - Minutes * SecondsInMinutes;
+            Minutes = (int)_time / SecondsInMinutes;
+
+            if (_time > 0)
+                return;
+            
+            Ended?.Invoke();
+            Stop();
         }
 
         public void Stop()

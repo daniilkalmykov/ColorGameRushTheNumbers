@@ -40,8 +40,8 @@ namespace Source.CompositeRoot
             _loadSceneButton.Init(levelSettings.SceneAsset);
             
             _timerCompositeRoot.Compose();
-            
-            _levelCompositeRoot.Init(levelSettings.Prize, _playerCompositeRoot.Wallet);
+
+            _levelCompositeRoot.Init(levelSettings.Prize, _playerCompositeRoot.Wallet, _timerCompositeRoot.Timer);
             _levelCompositeRoot.Compose();
         }
     }

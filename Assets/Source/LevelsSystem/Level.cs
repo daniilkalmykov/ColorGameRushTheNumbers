@@ -45,11 +45,11 @@ namespace Source.LevelsSystem
             End();
         }      
         
-        private void End()
+        public void End()
         {
             foreach (var line in _lines)
                 line.Completed -= OnCompleted;
-
+            
             _wallet.AddMoney((int)_prize);
             _timer.Stop();
             
