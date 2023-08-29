@@ -1,7 +1,6 @@
-
 using System.Runtime.CompilerServices;
 
-[assembly: InternalsVisibleTo("Lil_biba.ColorGameRushTheNumbers.TimersSystem")]
+[assembly: InternalsVisibleTo("Assembly-CSharp")]
 namespace Source.TimersSystem
 {
     internal sealed class Timer : ITimer
@@ -10,7 +9,12 @@ namespace Source.TimersSystem
         
         private bool _canUpdate;
         private float _time;
-        
+
+        public Timer(float time)
+        {
+            _time = time;
+        }
+
         public int Seconds { get; private set; }
         public int Minutes { get; private set; }
         
@@ -24,16 +28,10 @@ namespace Source.TimersSystem
             if (_canUpdate == false)
                 return;
 
-            _time += deltaTime;
+            _time -= deltaTime;
 
-            if (_time >= 1)
-            {
-                Seconds++;
-                _time = 0;
-            }
-
-            if (Seconds >= SecondsInMinutes)
-                Minutes++;
+            Seconds = (int)_time;
+            Minutes = Seconds / SecondsInMinutes;
         }
 
         public void Stop()
