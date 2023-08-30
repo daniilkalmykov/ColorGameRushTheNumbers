@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a2a2bb6a89142dcbcd1ac4a0dc038fa, type: 3}
-  m_Name: Easy 3x3 1
+  m_Name: Easy 3x3 3
   m_EditorClassIdentifier: 
-  _lineSums: 070000000700000008000000060000000900000007000000
+  _lineSums: 090000000600000008000000090000000600000008000000
   _lineSprites:
-  - {fileID: 21300000, guid: 38aad273ad74dab4080428455f8f9234, type: 3}
-  - {fileID: 21300000, guid: 38aad273ad74dab4080428455f8f9234, type: 3}
-  - {fileID: 21300000, guid: 24860a66cda31694bb9fb0f7c43e70aa, type: 3}
-  - {fileID: 21300000, guid: 3dbf0b703f11c5c4e8016b643826702d, type: 3}
   - {fileID: 21300000, guid: d51e05a8a6a85bc4bbfb38f92b51d279, type: 3}
-  - {fileID: 21300000, guid: 38aad273ad74dab4080428455f8f9234, type: 3}
-  _nextLevelSettings: {fileID: 11400000, guid: a3b29efad62c09b4a8a359637451eb92, type: 2}
-  <SceneAsset>k__BackingField: {fileID: 102900000, guid: 9fc0d4010bbf28b4594072e72b8655ab, type: 3}
+  - {fileID: 21300000, guid: 3dbf0b703f11c5c4e8016b643826702d, type: 3}
+  - {fileID: 21300000, guid: 24860a66cda31694bb9fb0f7c43e70aa, type: 3}
+  - {fileID: 21300000, guid: d51e05a8a6a85bc4bbfb38f92b51d279, type: 3}
+  - {fileID: 21300000, guid: 3dbf0b703f11c5c4e8016b643826702d, type: 3}
+  - {fileID: 21300000, guid: 24860a66cda31694bb9fb0f7c43e70aa, type: 3}
+  _nextLevelSettings: {fileID: 11400000, guid: c66d343dd7222c04ba58b62cf3592425, type: 2}
+  <SceneAsset>k__BackingField: {fileID: 102900000, guid: 340a3df13c8126946aad6f9bae5ba17a, type: 3}
   <Prize>k__BackingField: 200

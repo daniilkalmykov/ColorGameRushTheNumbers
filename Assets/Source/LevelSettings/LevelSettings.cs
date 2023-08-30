@@ -10,9 +10,12 @@ namespace Source.LevelSettings
     {
         [SerializeField] private List<uint> _lineSums;
         [SerializeField] private List<Sprite> _lineSprites;
+        [SerializeField] private LevelSettings _nextLevelSettings;
 
         [field: SerializeField] public SceneAsset SceneAsset { get; private set; }
         [field: SerializeField] public uint Prize { get; private set; }
+        
+        public ILevelSettings NextLevelSettings => _nextLevelSettings;
 
         public uint TryGetSum(uint index)
         {

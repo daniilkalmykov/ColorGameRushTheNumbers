@@ -15,6 +15,7 @@ namespace Source.CompositeRoot
         [SerializeField] private PlayerCompositeRoot _playerCompositeRoot;
         [SerializeField] private TMP_Text _prizeText;
         [SerializeField] private LoadSceneButton _loadSceneButton;
+        [SerializeField] private LevelButton _levelButton;
         [SerializeField] private TimerCompositeRoot _timerCompositeRoot;
 
         private void Awake()
@@ -38,6 +39,7 @@ namespace Source.CompositeRoot
             _prizeText.text = levelSettings.Prize.ToString();
             
             _loadSceneButton.Init(levelSettings.SceneAsset);
+            _levelButton.Init((LevelSettings.LevelSettings)levelSettings.NextLevelSettings);
             
             _timerCompositeRoot.Compose();
 

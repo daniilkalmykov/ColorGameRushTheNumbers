@@ -1497,7 +1497,7 @@ MonoBehaviour:
   - {fileID: 54787755}
   - {fileID: 640578467}
   - {fileID: 799600310}
-  _claimCoolDown: 0
+  _claimCoolDown: 24
   _claimDeadLine: 48
   _maxStreak: 6
   _bonusView: {fileID: 1354668568}
@@ -1802,7 +1802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff392305bba74a83ba41720a181e7cdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelSettings: {fileID: 11400000, guid: 89c0eb0324a139945a34cdd26eeaed45, type: 2}
+  _levelSettings: {fileID: 11400000, guid: ca11fad2626963f4fa28ca63ffb4d97d, type: 2}
 --- !u!1 &915525440
 GameObject:
   m_ObjectHideFlags: 0
@@ -3016,7 +3016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff392305bba74a83ba41720a181e7cdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelSettings: {fileID: 11400000, guid: ca11fad2626963f4fa28ca63ffb4d97d, type: 2}
+  _levelSettings: {fileID: 11400000, guid: d4ad188d9f5956c4995a60669ccc2342, type: 2}
 --- !u!114 &1576792892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3030,7 +3030,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _buyImage: {fileID: 572523864}
-  _sceneAsset: {fileID: 102900000, guid: 9fc0d4010bbf28b4594072e72b8655ab, type: 3}
+  _sceneAsset: {fileID: 102900000, guid: 340a3df13c8126946aad6f9bae5ba17a, type: 3}
   _button: {fileID: 627079618}
   _lock: {fileID: 1975925692}
 --- !u!1 &1630740166
