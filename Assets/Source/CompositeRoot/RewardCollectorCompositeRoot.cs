@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Source.ButtonsSystem;
 using Source.PlayerProgressSystem;
+using Source.Wallet;
 using UnityEngine;
 
 namespace Source.CompositeRoot
@@ -14,6 +15,13 @@ namespace Source.CompositeRoot
         [SerializeField] private int _maxStreak;
         [SerializeField] private MonoBehaviour _bonusView;
         [SerializeField] private CollectRewardButton _collectRewardButton;
+
+        private IWallet _wallet;
+        
+        public void Init(IWallet wallet)
+        {
+            _wallet = wallet ?? throw new ArgumentNullException();
+        }
         
         public override void Compose()
         {
@@ -24,7 +32,7 @@ namespace Source.CompositeRoot
                 if (i < streak)
                     _rewardCompositeRoots[i].SetDeactivatedImage();
                 else if(i == streak)
-                    _collectRewardButton.Init(_rewardCompositeRoots[i].Reward);
+                    _collectRewardButton.Init(_rewardCompositeRoots[i].Reward, _wallet);
                 else
                     _rewardCompositeRoots[i].SetNonCollectedImage();
             }

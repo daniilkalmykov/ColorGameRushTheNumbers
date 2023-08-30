@@ -12,6 +12,7 @@ namespace Source.PlayerProgressSystem
         private const string Money = "Money";
         private const string LastClaimedTime = "LastClaimedTime";
         private const string Streak = "Streak";
+        private const string IsBought = "IsBought";
 
         public static void SetMoney(int money)
         {
@@ -46,6 +47,18 @@ namespace Source.PlayerProgressSystem
         public static int GetStreak()
         {
             return PlayerPrefs.GetInt(Streak);
+        }
+
+        public static void SetBoughtStatus(bool isBought)
+        {
+            PlayerPrefs.SetInt(IsBought, isBought ? 1 : 0);
+        }
+        
+        public static bool GetBoughtStatus()
+        {
+            var index = PlayerPrefs.GetInt(IsBought);
+
+            return index != 0;
         }
     }
 }
