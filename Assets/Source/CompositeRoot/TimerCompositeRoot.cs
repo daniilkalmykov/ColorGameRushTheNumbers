@@ -8,6 +8,7 @@ namespace Source.CompositeRoot
     internal sealed class TimerCompositeRoot : CompositeRoot
     {
         [SerializeField] private float _time;
+        [SerializeField] private MonoBehaviour _tutorial;
 
         private TMP_Text _timeView;
         
@@ -15,6 +16,9 @@ namespace Source.CompositeRoot
 
         private void Update()
         {
+            if (_tutorial.gameObject.activeSelf)
+                return;
+            
             Timer!.Update(Time.deltaTime);
 
             _timeView.text = Timer!.Seconds.ToString().Length == 1

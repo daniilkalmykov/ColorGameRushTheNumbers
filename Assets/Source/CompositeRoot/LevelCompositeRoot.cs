@@ -15,6 +15,7 @@ namespace Source.CompositeRoot
         [SerializeField] private MonoBehaviour _gameOverScreen;
         [SerializeField] private List<LineCompositeRoot> _lineCompositeRoots;
         [SerializeField] private MonoBehaviour _loseScreen;
+        [SerializeField] private MonoBehaviour _tutorial;
 
         private Level _level;
         private IWallet _wallet;
@@ -49,10 +50,18 @@ namespace Source.CompositeRoot
             _level = new Level(lines, _wallet, _prize, _timer);
             
             _level.Start();
+            
             _level.Ended += OnEnded;
-
             _timer.Ended += OnTimerEnded;
 
+            var gamesCount = PlayerProgressSaver.GetGamesCount();
+
+            if (gamesCount == 0)
+                _tutorial.gameObject.SetActive(true);
+            
+            gamesCount++;
+            PlayerProgressSaver.SetGamesCount(gamesCount);
+            
             _gameOverScreen.gameObject.SetActive(false);
         }
 
